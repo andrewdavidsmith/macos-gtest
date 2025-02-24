@@ -16,9 +16,10 @@ jobs:
         brew install googletest
     - name: Configure gtest build
       run: |
-        find / -name \*gtest\* 
-        find / -name \*googletest\* 
-        find / -name \*mock\* 
+        find /opt -name \*gtest\* 
+        find /opt -name \*googletest\* 
+        find /opt -name \*mock\*
+        brew --prefix
 #        cmake -B build \
 #        -DCMAKE_OSX_SYSROOT="" \
 #        -DCMAKE_CXX_FLAGS="-I$(brew --prefix)/include" \
