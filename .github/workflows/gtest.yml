@@ -17,6 +17,7 @@ jobs:
     - name: Configure gtest build
       run: |
         cmake -B build \
+        -DCMAKE_CXX_COMPILER=g++-14 \
         -DCMAKE_VERBOSE_MAKEFILE=on
     - name: Build
       run: |
