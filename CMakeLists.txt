@@ -21,5 +21,17 @@ add_subdirectory(src)
 
 enable_testing()
 find_package(GTest REQUIRED)
+
+# Debugging output for gtest path and flags
+message(STATUS "GoogleTest found at: ${GTEST_INCLUDE_DIRS}")
+message(STATUS "GoogleTest library: ${GTEST_LIBRARIES}")
+
+# Check if GTest was found
+if (NOT GTest_FOUND)
+    message(FATAL_ERROR "GTest not found. Please ensure it is installed or provide the correct path.")
+else()
+    message(STATUS "GTest is available, proceeding with the build.")
+endif()
+
 include(GoogleTest)
 add_subdirectory(tests)
