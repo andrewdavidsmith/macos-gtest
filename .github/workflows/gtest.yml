@@ -1,0 +1,23 @@
+name: gtest on macOS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  macos-gtest:
+    strategy:
+      matrix:
+        os: [macos-13, macos-14, macos-15]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v4
+    - name: Configure gtest build
+      run: |
+        cmake -B build \
+        -DCMAKE_VERBOSE_MAKEFILE=on \
+    - name: Build
+      run: |
+        cmake --build build -j2
+    - name: Test
+      run: |
+        ctest --test-dir build
