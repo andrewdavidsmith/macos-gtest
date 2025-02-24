@@ -17,7 +17,7 @@ jobs:
     - name: Configure gtest build
       run: |
         cmake -B build \
-        -DCMAKE_VERBOSE_MAKEFILE=on \
+        -DCMAKE_VERBOSE_MAKEFILE=on
     - name: Build
       run: |
         cmake --build build -j2
