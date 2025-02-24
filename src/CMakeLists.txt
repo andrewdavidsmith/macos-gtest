@@ -1,5 +1,3 @@
-# to find the version of cmake do
-# $ cmake --version
 cmake_minimum_required(VERSION 3.28)
 
 add_library(hello OBJECT
